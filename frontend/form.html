@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Application Form</title>
+<link rel="stylesheet" href="form.css">
+</head>
+<body>
+<div class="form-container">
+    <form id="applyForm" enctype="multipart/form-data">
+        <h2>Apply for Job</h2>
+
+        <!-- Name -->
+        <label for="candidateName">Name</label>
+        <input type="text" id="candidateName" placeholder="Your Name" required>
+
+        <!-- Email -->
+        <label for="candidateEmail">Email</label>
+        <input type="email" id="candidateEmail" placeholder="Your Email" required>
+
+        <!-- Phone -->
+        <label for="candidatePhone">Phone Number</label>
+        <input type="text" id="candidatePhone" placeholder="Your Phone Number" required>
+
+        <!-- Location -->
+        <label for="location">Current Location</label>
+        <input type="text" id="location" placeholder="Your Location" required>
+
+        <!-- Gender -->
+        <label>Gender</label>
+        <input type="radio" name="gender" value="Male" required> Male
+        <input type="radio" name="gender" value="Female" required> Female
+        <input type="radio" name="gender" value="Other" required> Other
+
+        <!-- Education Level -->
+        <label for="educationLevel">Education Level</label>
+        <select id="educationLevel" required>
+            <option value="" disabled selected>Select your education</option>
+            <option value="High School">High School / 12th</option>
+            <option value="Graduation">Graduation / Bachelor's</option>
+            <option value="Postgraduate">Postgraduate / Master's</option>
+            <option value="PhD">PhD</option>
+        </select>
+
+        <!-- Graduation / Completion Date -->
+        <label for="graduationDate">Completion Date</label>
+        <input type="date" id="graduationDate" required>
+
+        <!-- Experience -->
+        <label for="experience">Experience</label>
+        <input type="text" id="experience" placeholder="e.g., 2 years" required>
+
+        <!-- Skills -->
+        <label>Skills</label>
+        <div id="skillsContainer">
+            <div class="skill-input">
+                <input type="text" name="skills[]" placeholder="Enter a skill" required>
+                <button type="button" id="addSkillBtn">+</button>
+            </div>
+        </div>
+
+        <!-- Resume Upload -->
+        <label for="cv">Upload Resume</label>
+        <input type="file" id="cv" name="resume" required>
+
+        <!-- Job ID (hidden) -->
+        <input type="hidden" id="jobId" value="">
+
+        <!-- Terms -->
+        <div>
+            <input type="checkbox" id="terms" required> I certify my details are correct, and I have read <a href="#" id="termsLink">terms & conditions</a>
+        </div>
+
+        <button type="submit">Submit Application</button>
+    </form>
+</div>
+
+<script src="form.js"></script>
+</body>
+</html>

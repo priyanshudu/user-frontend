@@ -1,0 +1,129 @@
+/* --- reset --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2ff, #f5f6fa);
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- top header --- */
+.top-header {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+}
+
+.top-header img {
+  height: 42px;
+}
+
+/* --- FULL CENTER WRAPPER --- */
+.login-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: #ffffff;
+  width: 90%;
+  max-width: 420px;
+
+  /* 👇 THIS IS THE KEY */
+  min-height: 50vh;
+
+  margin: 40px auto;
+  padding: 40px 32px;
+  border-radius: 12px;
+
+  box-shadow: 0 18px 35px rgba(0, 0, 0, .15);
+  text-align: center;
+
+  animation: popIn .5s ease;
+}
+
+/* title */
+.login-wrapper h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.login-wrapper h2::after {
+  content: "🔐 Future loading...";
+  display: block;
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* inputs */
+#loginForm input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+#loginForm input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .15);
+}
+
+/* button */
+#loginForm button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform .15s, box-shadow .15s;
+}
+
+#loginForm button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, .35);
+}
+
+#loginForm button:active {
+  transform: translateY(0);
+}
+
+/* footer text */
+.login-wrapper p {
+  margin-top: 22px;
+  font-size: 14px;
+}
+
+.login-wrapper a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* animation */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

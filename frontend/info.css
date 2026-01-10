@@ -1,0 +1,249 @@
+/* =========================================
+   LOGISTICS THEME - PERSONAL INFO PORTAL
+   ========================================= */
+
+:root {
+    --cargo-navy: #1a2b3c;       /* Trust & Reliability */
+    --safety-orange: #ff6b00;    /* Action & Safety */
+    --road-grey: #f4f7f9;        /* Background */
+    --white: #ffffff;
+    --border-grey: #e2e8f0;      /* Industrial Border */
+    --text-main: #2d3436;
+    --danger-red: #d63031;
+    --success-green: #27ae60;
+}
+
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Segoe UI', Tahoma, sans-serif;
+    background: var(--road-grey);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* =========================
+   TOP HEADER (White Nav)
+========================= */
+.top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 40px;
+    background: var(--white);
+    border-bottom: 3px solid var(--safety-orange); /* Logistics Accent */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    height: 35px;
+}
+
+.nav-buttons button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    border: 1px solid var(--border-grey);
+    background: var(--white);
+    color: var(--cargo-navy);
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+.nav-buttons button:hover {
+    background: var(--road-grey);
+}
+
+.nav-buttons button.active {
+    background: var(--cargo-navy);
+    color: var(--white);
+    border-color: var(--cargo-navy);
+}
+
+/* =========================
+   DASHBOARD CONTAINER
+========================= */
+.dashboard-container {
+    width: 90%;
+    max-width: 850px;
+    margin: 40px auto;
+}
+
+.dashboard-container h2 {
+    margin-bottom: 30px;
+    font-size: 26px;
+    color: var(--cargo-navy);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   SECTIONS (Cargo Design)
+========================= */
+.section {
+    background: var(--white);
+    padding: 24px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    border-left: 5px solid var(--cargo-navy); /* Looks like a shipping container */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.section h3 {
+    margin-bottom: 15px;
+    font-size: 17px;
+    color: var(--cargo-navy);
+    font-weight: 700;
+}
+
+/* =========================
+   TEXTBOXES & INPUTS
+========================= */
+input[type="text"],
+input[type="url"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border: 2px solid var(--border-grey);
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fafafa;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Textarea specifically */
+textarea {
+    resize: none; 
+    overflow-y: auto;
+    min-height: 80px;
+}
+
+/* Input Focus - Logistics Orange */
+input:focus, 
+textarea:focus {
+    outline: none;
+    border-color: var(--safety-orange);
+    background-color: var(--white);
+    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+}
+
+/* =========================
+   ITEM BOX (Dynamic Rows)
+========================= */
+.item-box {
+    border: 1px dashed #cbd5e1;
+    padding: 18px;
+    margin-bottom: 15px;
+    background: #fcfcfc;
+    border-radius: 4px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button {
+    padding: 9px 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+/* Add Buttons (Green) */
+#addEducationBtn,
+#addExperienceBtn,
+#addTrainingBtn,
+#addProjectBtn,
+#addSkillBtn,
+#addPortfolioBtn {
+    background: var(--success-green);
+    color: var(--white);
+    margin-bottom: 15px;
+    width: auto;
+}
+
+/* Section Action Buttons (Blue/Grey) */
+.section-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid #f1f1f1;
+    padding-top: 15px;
+}
+
+.section-actions button {
+    background: #f1f5f9;
+    color: var(--cargo-navy);
+}
+
+.section-actions .danger {
+    background: #fff5f5;
+    color: var(--danger-red);
+    border: 1px solid #fed7d7;
+}
+
+.section-actions .danger:hover {
+    background: var(--danger-red);
+    color: var(--white);
+}
+
+/* =========================
+   RESUME PREVIEW & UPLOAD
+========================= */
+input[type="file"] {
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    padding: 20px;
+    width: 100%;
+    cursor: pointer;
+}
+
+iframe {
+    width: 100%;
+    height: 250px;
+    border: 1px solid var(--border-grey);
+    margin-top: 15px;
+    border-radius: 4px;
+    background: #eee;
+}
+
+/* =========================
+   MAIN SAVE BUTTON
+========================= */
+.action-buttons {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+#submitPersonalInfoBtn {
+    background: var(--safety-orange);
+    color: white;
+    padding: 16px 45px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+}
+
+#submitPersonalInfoBtn:hover {
+    transform: translateY(-2px);
+    background: #e66000;
+}

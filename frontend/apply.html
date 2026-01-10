@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Apply Job</title>
+<link rel="stylesheet" href="apply.css">
+</head>
+<body>
+
+<h2>Job Application</h2>
+
+<div class="progress-container">
+  <div id="progressBar"></div>
+</div>
+
+<!-- ================= PHASE 1 ================= -->
+<div id="phase1" class="phase">
+
+  <h3>Career Objective</h3>
+  <pre id="careerObjectiveDisplay" class="info-box">Not provided</pre>
+
+  <h3>Education</h3>
+  <pre id="educationDisplay" class="info-box">Not provided</pre>
+
+  <h3>Experience</h3>
+  <pre id="experienceDisplay" class="info-box">Not provided</pre>
+
+  <h3>Skills</h3>
+  <pre id="skillsDisplay" class="info-box">Not provided</pre>
+
+  <h3>Projects</h3>
+  <pre id="projectsDisplay" class="info-box">Not provided</pre>
+
+  <h3>Trainings</h3>
+  <pre id="trainingsDisplay" class="info-box">Not provided</pre>
+
+  <h3>Accomplishments</h3>
+  <pre id="accomplishmentsDisplay" class="info-box">Not provided</pre>
+
+  <h3>Resume</h3>
+  <div class="info-box">
+    <a id="resumeLink" target="_blank">Not uploaded</a>
+  </div>
+
+  <button id="nextBtn1">Next</button>
+</div>
+
+<!-- ================= PHASE 2 ================= -->
+<div id="phase2" class="phase hidden">
+
+  <h3>Terms & Conditions</h3>
+
+  <p class="terms">
+    You confirm that all information provided is correct.
+    Any false information may lead to rejection.
+  </p>
+
+  <div class="buttons">
+    <button id="backBtn2">Back</button>
+    <button id="nextBtn2">Accept & Continue</button>
+  </div>
+</div>
+
+<!-- ================= PHASE 3 ================= -->
+<div id="phase3" class="phase hidden">
+
+  <h3>Final Submission</h3>
+  <p>Please confirm and submit your application.</p>
+
+  <div class="buttons">
+    <button id="backBtn3">Back</button>
+    <button id="submitBtn">Submit Application</button>
+  </div>
+</div>
+
+<script src="apply.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages | Logistics Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* =========================
+           LOGISTICS THEME VARIABLES
+        ========================= */
+        :root {
+            --cargo-navy: #1a2b3c;
+            --safety-orange: #ff6b00;
+            --road-grey: #f4f7f9;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: var(--road-grey);
+            color: var(--cargo-navy);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* =========================
+           TOP HEADER (Consistent with Dashboard)
+        ========================= */
+        .top-header {
+            background: var(--white);
+            height: 65px;
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 3px solid var(--safety-orange);
+            width: 100%;
+        }
+
+        .logo {
+            height: 35px;
+        }
+
+        /* =========================
+           CONSTRUCTION CONTENT
+        ========================= */
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .status-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 500px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--cargo-navy);
+        }
+
+        .construction-img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            /* Industrial grey border for the image */
+            border: 1px solid #e2e8f0;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            color: #64748b;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: var(--cargo-navy);
+            color: var(--white);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .back-btn:hover {
+            background: var(--safety-orange);
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-header">
+    <img src="../photo/logo-new.webp" alt="Logo" class="logo">
+</div>
+
+<div class="main-content">
+    <div class="status-card">
+        <img src="../photo/a.jpg" alt="Under Construction" class="construction-img">
+        
+        <h2>Communications Hub</h2>
+        <p>Our messaging system is currently undergoing scheduled maintenance to improve fleet connectivity.</p>
+        
+        <a href="dashboard.html" class="back-btn">Return to Dashboard</a>
+    </div>
+</div>
+
+</body>
+</html>

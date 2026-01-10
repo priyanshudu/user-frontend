@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Candidate Dashboard</title>
+<link rel="stylesheet" href="dashboard.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- TOP HEADER -->
+<div class="top-header">
+    <div class="header-logo">
+        <img src="../photo/logo-new.webp" alt="Logo" height="50">
+    </div>
+    <div class="menu-btn" id="menuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+<!-- SLIDE MENU -->
+<div class="slide-menu" id="slideMenu">
+    <div class="menu-header">Menu</div>
+    <ul>
+        <li id="btnpersonal-info">Personal Info</li>
+        <li id="btnJobs">Job Vacancy</li>
+        <li id="btnMessages">Messages</li>
+        <li id="btnLogout" class="logout">Logout</li>
+    </ul>
+</div>
+
+<!-- DASHBOARD CONTENT -->
+<div class="dashboard-container">
+    <div class="section-title">
+        <h2>Current Job Openings</h2>
+        <p>Explore opportunities that match your profile</p>
+    </div>
+    <div class="jobs-grid" id="jobsContainer">
+        <!-- Jobs will be loaded here -->
+    </div>
+</div>
+
+<script src="candidate.js"></script>
+</body>
+</html>

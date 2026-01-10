@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidate Signup</title>
+  <link rel="stylesheet" href="signup.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = "https://wpbklngiurhkrryjozih.supabase.co";
+    const SUPABASE_ANON_KEY = "YOUR_ANON_KEY";
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  </script>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- LEFT SIDE: Meme / Visual -->
+  <div class="left-side">
+    <div class="overlay">
+      <h1>Welcome Future Star! 🌟</h1>
+      <p>Sign up and start your career journey today!</p>
+      <img src="../photo/OIP.webp" alt="Career Meme" class="meme-img">
+      <div class="emoji-bar">
+        🚀 💼 😂 📈 🎯 🎉
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT SIDE: Signup Form -->
+  <div class="right-side">
+    <div class="signup-card">
+      <h2>Candidate Signup</h2>
+      <form id="signupForm">
+        <input id="name" placeholder="Name" required>
+        <input id="email" placeholder="Email" required>
+        <input id="phone" placeholder="Phone" required>
+        <input id="password" type="password" placeholder="Password" required>
+        <button>Sign Up</button>
+      </form>
+      <p class="joke">
+        ⚠️ Warning: HR may still say “We’ll get back to you”
+      </p>
+      <p>Already registered? <a href="login.html">Login here</a></p>
+    </div>
+  </div>
+
+</div>
+
+<script src="signup.js"></script>
+</body>
+</html>
