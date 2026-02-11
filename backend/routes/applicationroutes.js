@@ -1,20 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const applicationController = require('../controllers/applicationController');
+const verifyCandidateToken = require('../middleware/authMiddleware');
 
-const {
-  getCandidateProfile,
-  createOrUpdateProfile,
-  applyForJob,          // ✅ YOU MISSED THIS
-  checkApplied        // ✅ add
-} = require('../controllers/applicationController');
+// Candidate Profile Routes
+router.get('/profile', verifyCandidateToken, applicationController.getCandidateProfile);
+router.post('/profile', verifyCandidateToken, applicationController.createOrUpdateProfile);
 
-// Load personal info
-router.get('/:candidateId', getCandidateProfile);
+// Job Application Routes
+router.post('/apply', verifyCandidateToken, applicationController.applyForJob);
+router.get('/applied/:jobId', verifyCandidateToken, applicationController.checkApplied);
 
-// Save / Update personal info
-router.post('/createOrUpdate', createOrUpdateProfile);
-
-// Apply for job
-router.post('/apply', applyForJob);
-router.get('/check/:candidateId/:jobId', checkApplied);
 module.exports = router;

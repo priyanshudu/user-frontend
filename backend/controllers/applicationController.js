@@ -5,7 +5,8 @@ const supabase = require('../config/db');
 ============================== */
 exports.getCandidateProfile = async (req, res) => {
   try {
-    const { candidateId } = req.params;
+    // ✅ Get candidateId from JWT
+    const candidateId = req.candidate.id;
 
     const { data, error } = await supabase
       .from('candidate_resume')
@@ -41,8 +42,9 @@ exports.getCandidateProfile = async (req, res) => {
 ============================== */
 exports.createOrUpdateProfile = async (req, res) => {
   try {
+    // ✅ Use candidateId from JWT
+    const candidateId = req.candidate.id;
     const {
-      candidateId,
       careerObjective,
       education,
       experience,
@@ -53,8 +55,6 @@ exports.createOrUpdateProfile = async (req, res) => {
       resume,
       resumeFileName
     } = req.body;
-
-    if (!candidateId) return res.status(400).json({ message: "Candidate ID required" });
 
     // 1️⃣ Fetch existing resume URL
     let resume_url = null;
@@ -118,15 +118,17 @@ exports.createOrUpdateProfile = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 };
+
 /* =============================
    APPLY FOR JOB
 ============================= */
 exports.applyForJob = async (req, res) => {
   try {
-    const { candidateId, jobId } = req.body;
+    const candidateId = req.candidate.id;
+    const { jobId } = req.body;
 
-    if (!candidateId || !jobId) {
-      return res.status(400).json({ message: "CandidateId & JobId required" });
+    if (!jobId) {
+      return res.status(400).json({ message: "JobId required" });
     }
 
     // Check already applied
@@ -163,12 +165,14 @@ exports.applyForJob = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 };
+
 /* =============================
    CHECK IF ALREADY APPLIED
 ============================= */
 exports.checkApplied = async (req, res) => {
   try {
-    const { candidateId, jobId } = req.params;
+    const candidateId = req.candidate.id;
+    const { jobId } = req.params;
 
     const { data, error } = await supabase
       .from("applications")

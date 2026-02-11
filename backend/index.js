@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 const jobRoutes = require("./routes/jobroutes");
-const candidateRoutes = require('./routes/candidateRoutes');
+const candidateRoutes = require('./routes/candidateroutes');
 
 const applicationRoutes = require('./routes/applicationroutes');
 

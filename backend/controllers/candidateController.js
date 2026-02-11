@@ -1,4 +1,5 @@
 const supabase = require('../config/db');
+const jwt = require("jsonwebtoken");
 
 /**
  * STEP 1: Signup start (OTP already handled by Supabase frontend)
@@ -50,6 +51,7 @@ const candidateLogin = async (req, res) => {
   try {
     const { email, password } = req.body;
 
+    // 1️⃣ Find candidate in DB
     const { data, error } = await supabase
       .from('candidates')
       .select('*')
@@ -61,12 +63,34 @@ const candidateLogin = async (req, res) => {
       return res.status(400).json({ message: "Invalid credentials" });
     }
 
-    return res.json({ success: true, candidate: data });
+    // 2️⃣ Generate JWT
+    const token = jwt.sign(
+      {
+        candidateId: data.id,
+        email: data.email,
+        role: "candidate"
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: process.env.JWT_EXPIRES_IN }
+    );
+
+    // 3️⃣ Return candidate info + token
+    return res.json({
+      success: true,
+      token, // <-- JWT for frontend
+      candidate: {
+        id: data.id,
+        name: data.name,
+        email: data.email
+      }
+    });
 
   } catch (err) {
+    console.error("Login Error:", err);
     return res.status(500).json({ message: "Server error" });
   }
 };
+
 
 module.exports = {
   startCandidateSignup,
